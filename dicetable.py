@@ -73,8 +73,8 @@ def dicec(dn, ds):
     return DF
 
 
-DN = 4
-DS = 6
+DN = int(input("Number of dice --> "))
+DS = int(input("Total number of sides per die --> "))
 DICE = dicec(DN, DS)
 DT = []
 
