@@ -86,6 +86,7 @@ def dicec(dn, ds):
 DN = int(input("Number of dice --> "))
 DS = int(input("Total number of sides per die --> "))
 DICE = dicec(DN, DS)
+DCL = len(DICE[0])
 DCS = 0
 diecs = len(DICE[0])*DS
 for i in DICE:
@@ -1140,8 +1141,8 @@ with open("{}\Output_text.txt".format(path_fol), "w") as text_file:
         print(DT[-1].replace("draw", "\draw"), file=text_file)
 
     print("};", file=text_file)
-    print('\\node[font=\huge, above=2.0cm]  at ($(m-1-{})!0.5!(m-1-{})$)'.format(int(DS/2), int((DS/2) + 1)) + '{Dice Table};', file=text_file)
-    print("\\node[font=\large, above=1.25cm]  at ($(m-1-{})!0.5!(m-1-{})$)".format(int(DS/2), int((DS/2) + 1)) + "{}Total Dice: {}  Faces per die: {} Total combinations: {}{};".format('{', DN, DS, DCS, '}'), file=text_file)
+    print('\\node[font=\huge, above=2.0cm]  at ($(m-1-{})!0.5!(m-1-{})$)'.format(int(DCL/2), int((DCL/2) + 1)) + '{Dice Table};', file=text_file)
+    print("\\node[font=\large, above=1.25cm]  at ($(m-1-{})!0.5!(m-1-{})$)".format(int(DCL/2), int((DCL/2) + 1)) + "{}Total Dice: {}  Faces per die: {} Total combinations: {}{};".format('{', DN, DS, DCS, '}'), file=text_file)
     print("\\end{tikzpicture}", file=text_file)
     print("\\end{document}", file=text_file)
     text_file.close()
@@ -1180,8 +1181,8 @@ with open("{}\Output_text_dom.txt".format(path_fol), "w") as text_file2:
         DTx = []
         print(DT[-1].replace("dom", "\dom"), file=text_file2)
     print("};", file=text_file2)
-    print('\\node[font=\huge, above=2.0cm]  at ($(m-1-{})!0.5!(m-1-{})$)'.format(int(DS/2), int((DS/2) + 1)) + '{Dice Table};', file=text_file2)
-    print("\\node[font=\large, above=1.25cm]  at ($(m-1-{})!0.5!(m-1-{})$)".format(int(DS/2), int((DS/2) + 1)) + "{}Total Dice: {}  Faces per die: {} Total combinations: {}{};".format('{', DN, DS, DCS, '}'), file=text_file2)
+    print('\\node[font=\huge, above=2.0cm]  at ($(m-1-{})!0.5!(m-1-{})$)'.format(int(DCL/2), int((DCL/2) + 1)) + '{Dice Table};', file=text_file2)
+    print("\\node[font=\large, above=1.25cm]  at ($(m-1-{})!0.5!(m-1-{})$)".format(int(DCL/2), int((DCL/2) + 1)) + "{}Total Dice: {}  Faces per die: {} Total combinations: {}{};".format('{', DN, DS, DCS, '}'), file=text_file2)
     print("\\end{tikzpicture}", file=text_file2)
     print("\\end{document}", file=text_file2)
 with open("{}\Output_text_dom.txt".format(path_fol)) as fin2:
