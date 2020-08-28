@@ -85,12 +85,18 @@ def dicec(dn, ds):
 
 DN = int(input("Number of dice --> "))
 DS = int(input("Total number of sides per die --> "))
+print("")
 DICE = dicec(DN, DS)
 DCL = len(DICE[0])
 DCS = 0
 diecs = len(DICE[0])*DS
 for i in DICE:
     DCS += len(i)
+    print(i)
+    print("")
+
+print("")
+print("Total number of combinations: {}".format(DCS))
 
 DT = []
 texdoc = []
